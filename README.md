@@ -7,9 +7,9 @@ Blog post: [Persistent sudo Touch ID Authentication on macOS](https://birkhoff.m
 ## Installation
 
 ```console
-git clone https://github.com/BirkhoffLee/persistent-pam-tid.git
-sudo cp persistent-pam-tid/pam-tid-installer /usr/local/bin/
-sudo cp persistent-pam-tid/me.birkhoff.persistent_pam_tid.plist /Library/LaunchDaemons/
+sudo curl -o /usr/local/bin/pam-tid-installer https://raw.githubusercontent.com/BirkhoffLee/persistent-pam-tid/main/pam-tid-installer
+sudo curl -o /Library/LaunchDaemons/me.birkhoff.persistent_pam_tid.plist https://raw.githubusercontent.com/BirkhoffLee/persistent-pam-tid/main/me.birkhoff.persistent_pam_tid.plist
+sudo chmod +x /usr/local/bin/pam-tid-installer
 sudo chown root:wheel /Library/LaunchDaemons/me.birkhoff.persistent_pam_tid.plist
 sudo launchctl load -w /Library/LaunchDaemons/me.birkhoff.persistent_pam_tid.plist
 ```
